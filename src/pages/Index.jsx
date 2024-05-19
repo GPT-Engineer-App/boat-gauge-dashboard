@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, VStack, HStack, Box, Text, Button, CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
+import { Container, VStack, HStack, Box, Text, Button, CircularProgress, CircularProgressLabel, Heading } from "@chakra-ui/react";
 import { FaPlay, FaPause, FaRedo } from "react-icons/fa";
 
 const Gauge = ({ label, value, max }) => (
@@ -68,7 +68,10 @@ const Index = () => {
 
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={8}>
+      <VStack spacing={8} width="100%">
+        <Heading as="h1" size="lg" textAlign="center" mb={8}>
+          SuncaTcHer -Bootsstation
+        </Heading>
         <HStack spacing={8}>
           <Gauge label="Speed" value={speed} max={100} />
           <Gauge label="Panel Voltage" value={panelVoltage} max={24} />
