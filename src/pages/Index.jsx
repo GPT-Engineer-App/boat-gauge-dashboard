@@ -71,13 +71,13 @@ const Index = () => {
       <VStack spacing={8}>
         <HStack spacing={8}>
           <Gauge label="Speed" value={speed} max={100} />
-          <Gauge label="Panel Voltage" value={panelVoltage} max={24} />
+          <Timer />
         </HStack>
         <HStack spacing={8}>
           <Gauge label="Battery Voltage" value={batteryVoltage} max={24} />
           <Gauge label="Motor Voltage" value={motorVoltage} max={48} />
+          <Gauge label="Panel Voltage" value={panelVoltage} max={24} />
         </HStack>
-        <Timer />
       </VStack>
     </Container>
   );
