@@ -88,11 +88,13 @@ const Index = () => {
           <Timer setRemainingTime={setRemainingTime} />
           <Gauge label="Remaining Battery Time" value={remainingTime / 60} max={60} />
         </HStack>
-        <SimpleGrid columns={[1, null, 3]} spacing={4} width="100%" mt={8}>
+        <HStack spacing={4} width="100%" mt={8} justifyContent="center">
           <Gauge label="Panel Voltage" value={panelVoltage} max={24} />
+          <Icon as={FaArrowRight} boxSize={6} />
           <Gauge label="Battery Voltage" value={batteryVoltage} max={24} />
+          <Icon as={FaArrowRight} boxSize={6} />
           <Gauge label="Motor Voltage" value={motorVoltage} max={48} />
-        </SimpleGrid>
+        </HStack>
       </VStack>
     </Container>
   );
