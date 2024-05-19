@@ -80,18 +80,17 @@ const Index = () => {
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={8} width="100%">
-        <Timer setRemainingTime={setRemainingTime} />
-        <RemainingBatteryTime remainingTime={remainingTime} />
         <Heading as="h1" size="lg" textAlign="center" mb={8}>
           SuncaTcHer -Bootsstation
         </Heading>
-        <SimpleGrid columns={[1, null, 2]} spacing={4} width="100%">
+        <HStack spacing={8} width="100%" justifyContent="center">
           <Gauge label="Speed" value={speed} max={100} />
+          <Timer setRemainingTime={setRemainingTime} />
+          <Gauge label="Remaining Battery Time" value={remainingTime / 60} max={60} />
+        </HStack>
+        <SimpleGrid columns={[1, null, 3]} spacing={4} width="100%" mt={8}>
           <Gauge label="Panel Voltage" value={panelVoltage} max={24} />
-          <Gauge label="Panel Voltage" value={panelVoltage} max={24} />
-          <Icon as={FaArrowRight} boxSize={6} />
           <Gauge label="Battery Voltage" value={batteryVoltage} max={24} />
-          <Icon as={FaArrowRight} boxSize={6} />
           <Gauge label="Motor Voltage" value={motorVoltage} max={48} />
         </SimpleGrid>
       </VStack>
